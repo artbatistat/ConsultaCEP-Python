@@ -15,15 +15,12 @@ def consultar_cep(cep):
             f'Estado: {r.json()["estado"]} ({r.json()["uf"]})'
             )
   else:
-      if(r.status_code >= 400) and (r.status_code <= 499):
-        print(
-              f'\n'
-              f'{r.status_code} - Error related with client error responses'
-              )
-      elif(r.status_code >= 500) and (r.status_code <= 599):
-        print(f'{r.status_code} - Error related with server error responses')
-      else:
-        print(f'Error: {r.status_code}')
+    if(r.status_code >= 400) and (r.status_code <= 499):
+      print(f'{r.status_code} - Error related with client error responses')
+    elif(r.status_code >= 500) and (r.status_code <= 599):
+      print(f'{r.status_code} - Error related with server error responses')
+    else:
+      print(f'Error: {r.status_code}')
 
 ################################################################################
 ################################################################################
